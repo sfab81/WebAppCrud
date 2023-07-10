@@ -47,7 +47,7 @@ namespace WebAppCrud.Controllers
         public async Task<IActionResult> Crea(ProdModel model) 
         {
             Prod prod=new Prod();
-            prod.Id = model.Id;
+            prod.Id = Guid.NewGuid();
             prod.Nome = model.Nome;
             prod.Prezzo = model.Prezzo;
             var result =await _dbContext1.Prods.AddAsync(prod);
